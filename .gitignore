@@ -1,0 +1,5 @@
+# Local secrets (the Supabase URL + publishable key are NOT secrets; they live in config.js)
+.env
+.env.*
+.vercel
+.DS_Store
