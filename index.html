@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BarPulse — Marina &amp; Cow Hollow bar crowds, live</title>
+  <meta name="description" content="See which Marina and Cow Hollow bars have no wait, are filling up, or have a line out the door — from people who are there right now.">
+  <meta name="theme-color" content="#c4422b">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Leaflet 1.9.4 from a CDN (no npm). integrity = the file's fingerprint, so the
+       browser refuses it if the CDN ever serves something different. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <a class="brand" href="/" aria-label="BarPulse home">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#c4422b"/><path d="M10 34h11l5-12 8 22 6-14 3 4h11" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand__name">BarPulse</span>
+        <span class="brand__area">Marina · Cow Hollow</span>
+      </a>
+      <p class="count-chip" id="bar-count" aria-live="polite">Loading…</p>
+    </header>
+
+    <main class="map-wrap">
+      <h1 class="visually-hidden">Map of bars in the Marina and Cow Hollow</h1>
+      <div id="map" role="region" aria-label="Map of bars"></div>
+
+      <div class="banner" id="banner-loading" role="status">
+        <span class="spinner" aria-hidden="true"></span>
+        <span class="banner__text">Loading bars…</span>
+      </div>
+
+      <div class="banner banner--error" id="banner-error" role="alert" hidden>
+        <span class="banner__text"><strong id="error-title">Couldn’t load bars.</strong><span id="error-detail">Check your connection and try again.</span></span>
+        <button class="btn" id="retry" type="button">Try again</button>
+      </div>
+
+      <noscript>
+        <div class="banner banner--error">
+          <span class="banner__text"><strong>BarPulse needs JavaScript.</strong>Turn it on to see the map.</span>
+        </div>
+      </noscript>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"
+          integrity="sha384-Rj26LVGvoeRVR6+mwQmFfcR3QOBEwT+ZmuCWpuiqeTzJpCs0ER4ITAWGb4Hiy3Ok" crossorigin="anonymous"></script>
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

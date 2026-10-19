@@ -77,6 +77,12 @@ python3 -m http.server 3000
 
 then open http://localhost:3000.
 
+## Status
+- [x] Stage 1: map with all bars from the database, open/closed in each popup
+- [ ] Stage 2: bar list, filters, status colours, light/dark mode
+- [ ] Stage 3: sign up / sign in, GPS-checked updates
+- [ ] Stage 4: deploy and verify
+
 ## Deploy
 Vercel is connected to this GitHub repository. Every push to `main` deploys
 automatically; pull requests get preview URLs.
